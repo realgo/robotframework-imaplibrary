@@ -132,7 +132,7 @@ class ImapLibrary(object):
             body = self._imap.uid('fetch',
                                   email_index,
                                   '(BODY[TEXT])')[1][0][1].\
-                decode('quoted-printable')
+                decode('utf-8')
         return body
 
     def get_links_from_email(self, email_index):
